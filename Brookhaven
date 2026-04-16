@@ -9382,7 +9382,7 @@ local function StartLoop()
                     }
 
                     pcall(function()
-                        Remote:FireServer(unpack(args))
+                        Remote:FireServer(unpack(args)) -- INI YANG BENAR
                     end)
 
                     task.wait(2)
