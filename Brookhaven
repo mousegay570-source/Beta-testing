@@ -2,7 +2,7 @@ local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/minhd
 
 local Window = redzlib:MakeWindow({
   Title = "Xavier Hub         Brookhaven RP           [ Normal ]",
-  SubTitle = "by Ricky",
+  SubTitle = "by Fenzoxy",
   SaveFolder = "goXpp.lua"
 })
 Window:AddMinimizeButton({
@@ -4477,6 +4477,46 @@ Ava:AddButton({
 local Section = Ava:AddSection({"glitch (OP)"})
 
 Ava:AddButton({
+    Name = "Fake Tank",
+    Callback = function()
+
+local args = {
+	78771157166582
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wear"):InvokeServer(unpack(args))
+   
+task.wait(2)
+
+local args = {
+	754637456
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wear"):InvokeServer(unpack(args))
+   
+task.wait(2)
+
+local args = {
+	754637084
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wear"):InvokeServer(unpack(args))
+   
+task.wait(2)
+
+ local args = {
+	754636298
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wear"):InvokeServer(unpack(args))
+   
+ task.wait(2)
+ 
+   local args = {
+	754635032
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wear"):InvokeServer(unpack(args))
+   
+   end
+})
+
+Ava:AddButton({
     Name = "Fake white car (use shiftlock)",
     Callback = function()
 
@@ -8596,6 +8636,49 @@ workspace.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitFor
   end
 })
 
+local name = Window:MakeTab({"RolePlayName", "plane"})
+
+name:AddButton({
+    Name = "Ｈｏｒｉｚｏｎ",
+    Callback = function()
+    
+    local args = {
+	"RolePlayName",
+	"Ｈｏｒｉｚｏｎ"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
+
+    
+   end
+})
+
+name:AddButton({
+    Name = "C̶o̶o̶l̶k̶i̶d̶",
+    Callback = function()
+    
+    local args = {
+	"RolePlayName",
+	"C̶o̶o̶l̶k̶i̶d̶"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
+
+    
+   end
+})
+
+name:AddButton({
+    Name = "Xavier Hub On Top",
+    Callback = function()
+    
+    local args = {
+	"RolePlayName",
+	"Xavier On Top"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
+
+  end
+})
+
 local Skybox = Window:MakeTab({"Skybox", "cloud"})
 
 Skybox:AddButton({
@@ -9357,52 +9440,4 @@ Family:AddToggle({
     end
 })
 
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local Remote = ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Playe1rTrigge1rEven1t")
-
-local ToggleActive = false
-local Running = false
-
-local function StartLoop()
-    if Running then return end
-    Running = true
-
-    task.spawn(function()
-        while ToggleActive do
-            for _, plr in ipairs(Players:GetPlayers()) do
-                if not ToggleActive then break end
-
-                if plr ~= Players.LocalPlayer then
-                    local args = {
-                        "Client2Client",
-                        "Request: Piggyback!",
-                        plr
-                    }
-
-                    pcall(function()
-                        Remote:FireServer(unpack(args)) -- INI YANG BENAR
-                    end)
-
-                    task.wait(2)
-                end
-            end
-        end
-
-        Running = false
-    end)
-end
-
--- toggle
-Family:AddToggle({
-    Name = "piggyback all",
-    Default = false,
-    Callback = function(v)
-        ToggleActive = v
-
-        if v then
-            StartLoop()
-        end
-    end
-})
+local hub = Window:MakeTab({"Other script", "lock"})
